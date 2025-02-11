@@ -1,0 +1,100 @@
+﻿<Window x:Class="entrollmentportal.StudentDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:entrollmentportal"
+        mc:Ignorable="d"
+        Title="StudentDashboard" Height="450" Width="800" Background="AliceBlue">
+    <Grid>
+        <TextBlock Text="University Of Chennai" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="10" Foreground="CadetBlue"></TextBlock>
+        
+        <!--Header-->
+        <Border Background="#AFD2F8" CornerRadius="20" Height="50" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+            <TextBlock Text="Student Dashboard" Padding="30,10,10,20" FontSize="15"  FontWeight="Bold"></TextBlock>
+        </Border>
+        <!--Main content-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom">
+                <TextBlock Text="Courses" FontSize="15" FontWeight="Bold" Margin="20,0,0,0"></TextBlock>
+                <ComboBox x:Name="cmbcourses" Margin="10,0,0,0">
+                    <ComboBoxItem Content="JAVA"></ComboBoxItem>
+                    <ComboBoxItem Content="Python"></ComboBoxItem>
+                    <ComboBoxItem Content="C#"></ComboBoxItem>
+                    <ComboBoxItem Content="SQL"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0">
+                <TextBlock Text="Project Status" Margin="10" FontSize="15" FontWeight="Bold"></TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Margin="20,0,0,0">
+                    <RadioButton Content="In progress" x:Name="rdbinprogress" GroupName="Project Status"></RadioButton>
+                    <RadioButton Content="Done" x:Name="rdbdone" GroupName="Project Status"></RadioButton>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Notes Taken" Margin="10" FontSize="15" FontWeight="Bold"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Margin="20,0,0,0">
+                        <RadioButton Content="In progress" x:Name="rdbnotesno" GroupName="Notes Taken"></RadioButton>
+                        <RadioButton Content="Done" x:Name="rdbnotesyes"  GroupName="Notes Taken"></RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Demo Project Status" Margin="10" FontSize="15" FontWeight="Bold"></TextBlock>
+                    <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                        <RadioButton Content="In progress" x:Name="rdbdemono" GroupName="Demo Project Status"></RadioButton>
+                        <RadioButton Content="Done" x:Name="rdbdemoyes" GroupName="Demo Project Status"></RadioButton>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Date Of Completion" Margin="10" FontSize="15" FontWeight="Bold"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                        <DatePicker x:Name="dpselectdate" Background="Chocolate"></DatePicker>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Check In" Background="CadetBlue" Margin="20" Width="50" x:Name="btncheckin" Click="btncheckin_Click"></Button>
+                </StackPanel>
+            </StackPanel>
+           
+
+            <StackPanel Grid.Row="2" Grid.Column="3" >
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                    <TextBlock Text="Edit Profile" FontSize="15" FontWeight="Bold"></TextBlock>
+                    <Image Source="https://icon-library.com/images/edit-profile-icon/edit-profile-icon-5.jpg" Margin="10,0,0,0"  Width="35"></Image>
+                </StackPanel>
+                
+                <StackPanel>
+                    <TextBlock Text="Name" Margin="10,5,0,0" FontSize="13" FontWeight="DemiBold"></TextBlock>
+                    <TextBox x:Name="txtname" Margin="10,5,0,10" Width="250" BorderThickness="0,0,0,2" BorderBrush="Gray" ></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Email" Margin="10,5,0,0" FontSize="13" FontWeight="DemiBold"></TextBlock>
+                    <TextBox x:Name="txtemail" Margin="10,5,0,10" Width="250" BorderThickness="0,0,0,2" BorderBrush="Gray"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Password" Margin="5,5,0,0" FontSize="13" FontWeight="DemiBold"></TextBlock>
+                    <PasswordBox x:Name="txtpassword" Margin="10,5,0,10" Width="250" BorderThickness="0,0,0,2" BorderBrush="Gray"></PasswordBox>
+                </StackPanel>
+                <Button x:Name="btnsavechanges" Content="Save Changes" Width="100" Margin="20" Background="CadetBlue" Click="btnsavechanges_Click"></Button>
+
+            </StackPanel>
+                
+            
+  
+            
+
+        </Grid>
+        
+        
+        
+        
+    </Grid>
+</Window>
